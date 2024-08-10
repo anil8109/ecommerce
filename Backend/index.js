@@ -6,9 +6,12 @@ const cardRoutes = require('./routes/card');
 const bodyParser = require('body-parser');
 const db = require('./models');
 const app = express();
+const cors = require('cors');
+
 
 app.use(express.json());
 app.use(bodyParser.json())
+app.use(cors());
 app.use('/api', imageRoutes);
 app.use('/api/product', productRoutes);
 app.use('/api/card', cardRoutes);
